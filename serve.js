@@ -10,7 +10,7 @@ fastify.get('/move', async (request, reply) => {
 
   try {
     const { execSync } = require('child_process');
-    const cmd = `xdotool mousemove ${x} ${y}` 
+    const cmd = `ydotool mousemove ${x} ${y}` 
     console.info(cmd);
     execSync(cmd);
     return { message: 'Souris déplacée avec succès', position: { x, y } };
@@ -22,7 +22,7 @@ fastify.get('/move', async (request, reply) => {
 fastify.get('/click', async (request, reply) => {
   try {
     const { execSync } = require('child_process');
-    const cmd = `xdotool click 1`; // 1 pour clic gauche
+    const cmd = `ydotool click 1`; // 1 pour clic gauche
     console.info(cmd);
     execSync(cmd);
     return { message: 'Clic effectué avec succès' };
